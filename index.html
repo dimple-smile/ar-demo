@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <script src="./aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="./aframe-ar.js"></script>
+  <script src="./gesture-detector.js"></script>
+  <script src="./gesture-handler.js"></script>
+  <script src="./vconsole.js"></script>
+  <!-- <script>
+    // VConsole 默认会挂载到 `window.VConsole` 上
+    var vConsole = new window.VConsole();
+  </script> -->
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene
+      embedded
+      arjs
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-marker preset="hiro">
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.05 0.05 0.05"
+          gltf-model="./image-tracking/nft/trex/scene.gltf"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
